@@ -1,10 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using tp5_103022330036;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tp5_103022330036;
+using tp5_103022330036.tp5_103022330036;
 
 namespace tp5_103022330036
 {
@@ -15,17 +17,41 @@ namespace tp5_103022330036
             Console.WriteLine($"Halo, user{x}");
         }
     }
-}
 
-
-﻿// See https://aka.ms/new-console-template for more information
-
-class program
+namespace tp5_103022330036
 {
-    static void Main(string[] args)
+    class DataGeneric<T>
     {
-        HaloGeneric hai = new HaloGeneric();
+        private T data;
+        public DataGeneric(T Data)
+        {
+            this.data = Data;
+        }
 
-        hai.SapaUser<string>(" Praktikan");
+        public void printData()
+        {
+            Console.WriteLine("Data yang tersimpan adalah: " + data);
+
+        }
     }
 }
+
+
+
+    // See https://aka.ms/new-console-template for more information
+
+    class program
+    {
+        static void Main(string[] args)
+        {
+            HaloGeneric hai = new HaloGeneric();
+
+            hai.SapaUser<string>(" Praktikan");
+            string nim = "10302233036";
+            DataGeneric<string> data = new DataGeneric<string>(nim);
+            data.printData();
+        }
+    }
+}
+
+
